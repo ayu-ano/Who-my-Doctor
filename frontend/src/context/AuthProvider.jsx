@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
       const headers = {
         "Authorization": `Bearer ${token}`
       };
-      await axios.post(`http://localhost:3000/login`, {}, { headers }).then((result) => {
+      await axios.post(`https://hospital-web-68vl.onrender.com/login`, {}, { headers }).then((result) => {
         console.log(result.data)
         const { status, user } = result.data
         setIsAuthenticated([true, user])

@@ -25,7 +25,7 @@ export default function Login() {
             // console.log(formData);
             const formData = { ...user, type };
             console.log("Form data", formData);
-            const res = await axios.post(`http://localhost:3000/login`, formData);
+            const res = await axios.post(`https://hospital-web-68vl.onrender.com/login`, formData);
             console.log("Logged in response : ");
             console.log(res.data);
 

@@ -49,7 +49,7 @@ export default function PredictDoc() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post(`http://localhost:3000/prediction`, { issues: symptoms })
+      .post(`https://hospital-web-68vl.onrender.com/prediction`, { issues: symptoms })
       .then((result) => {
         console.log(result.data);
         setPredictedtype(result.data);

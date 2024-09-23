@@ -38,7 +38,7 @@ export default function DoctorProfile() {
             "location": docDetails.location
         }
 
-        const res = await axios.post("http://localhost:3000/doctor/update-profile", data);
+        const res = await axios.post("https://hospital-web-68vl.onrender.com/doctor/update-profile", data);
         if (res.data.status) {
             setIsAuthenticated([true, docDetails])
         }

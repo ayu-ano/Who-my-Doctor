@@ -25,7 +25,7 @@ function DoctorBookingRecords() {
     const getAllRecords = async () => {
         try {
             console.log(isAuthenticated[1]?.email);
-            const res = await axios.post('http://localhost:3000/doctor/booking-history', {
+            const res = await axios.post('https://hospital-web-68vl.onrender.com/doctor/booking-history', {
                 'doctor_email': isAuthenticated[1]?.email  //for checking
             })
             // console.log(res.data);

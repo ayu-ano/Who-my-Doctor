@@ -75,7 +75,7 @@ const Doctorpages = () => {
   };
 
   const getdatadoctor = async () => {
-    await axios.post(`http://localhost:3000/doctor`, { 'email': email }).then((result) => {
+    await axios.post(`https://hospital-web-68vl.onrender.com/doctor`, { 'email': email }).then((result) => {
       console.log(result.data)
       setdoctorData((data) => {
         return { ...data, 'bookings': result.data.slots, 'start_time': result.data.start_time }
@@ -92,7 +92,7 @@ const Doctorpages = () => {
 
   const handleShowPatient = async (e) => {
     console.log(e.target.getAttribute('date'))
-    await axios.post(`http://localhost:3000/doctor/get-patient`, { 'patient_email': e.target.name }).then((result) => {
+    await axios.post(`https://hospital-web-68vl.onrender.com/doctor/get-patient`, { 'patient_email': e.target.name }).then((result) => {
       console.log(result.data)
       setpatientDetails({
         ...result.data,

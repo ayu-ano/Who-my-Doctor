@@ -73,7 +73,7 @@ export default function SignUp() {
         };
       }
       console.log("Data before axios ", data);
-      const res = await axios.post(`http://localhost:3000/register`, data);
+      const res = await axios.post(`https://hospital-web-68vl.onrender.com/register`, data);
 
       console.log("Response", res.data);
       if (res.data.status) {

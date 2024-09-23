@@ -9,7 +9,7 @@ export default function Modal(props) {
 
     const [bookingstatus,setBookingStatus]=useState('')
     const handlebookingconfirmation = async () => {
-        await axios.post(`http://localhost:3000/patient/book-doctor`, obj).then((result) => {
+        await axios.post(`https://hospital-web-68vl.onrender.com/patient/book-doctor`, obj).then((result) => {
             console.log(result)
             props.setBookingDetails({
                 doctor_email: '',

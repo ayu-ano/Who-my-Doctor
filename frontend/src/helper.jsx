@@ -1,5 +1,5 @@
 if(formData.location!='hulu'){
-    axios.post(`http://localhost:3000/patient/find-doctor`,formData).then((result)=>{
+    axios.post(`https://hospital-web-68vl.onrender.com/patient/find-doctor`,formData).then((result)=>{
       console.log(result.data)
       setFilteredDoctors(result.data)
     }).catch((error)=>{
@@ -8,7 +8,7 @@ if(formData.location!='hulu'){
   }
 
   const fetchlocations = async () => {
-    await axios.get(`http://localhost:3000/patient`).then((result) => {
+    await axios.get(`https://hospital-web-68vl.onrender.com/patient`).then((result) => {
       console.log(result.data)
       setLocation(result.data)
     }).catch((error) => {

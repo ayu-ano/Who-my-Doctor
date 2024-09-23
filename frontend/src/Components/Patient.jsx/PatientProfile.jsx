@@ -12,7 +12,7 @@ function PatientProfile() {
 
     const getAllRecords = async () => {
         try {
-            const res = await axios.post('http://localhost:3000/patient/previous-records', {
+            const res = await axios.post('https://hospital-web-68vl.onrender.com/patient/previous-records', {
                 'email': isAuthenticated[1]?.email  //for checking
             })
             setPreviousRecords(res.data);

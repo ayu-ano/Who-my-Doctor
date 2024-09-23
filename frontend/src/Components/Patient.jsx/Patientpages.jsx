@@ -23,7 +23,7 @@ const Patientpages = () => {
 
   //getting the locations available
   const fetchlocations = async () => {
-    await axios.get(`http://localhost:3000/patient/get-locations`).then((result) => {
+    await axios.get(`https://hospital-web-68vl.onrender.com/patient/get-locations`).then((result) => {
       console.log(result.data)
       setLocation(result.data)
     }).catch((error) => {
@@ -32,7 +32,7 @@ const Patientpages = () => {
   }
 
   const fetchSpecialities = async () => {
-    await axios.get(`http://localhost:3000/patient/get-specialities`).then((result) => {
+    await axios.get(`https://hospital-web-68vl.onrender.com/patient/get-specialities`).then((result) => {
       setSpecialities(result.data)
     }).catch((error) => {
       console.log(error)
@@ -104,7 +104,7 @@ const Patientpages = () => {
 
   const bookDoctor = async () => {
     // console.log("Booking details before the api call ", bookingDetails);
-    // const res = await axios.post(`http://localhost:3000/patient/book-doctor`, bookingDetails);
+    // const res = await axios.post(`https://hospital-web-68vl.onrender.com/patient/book-doctor`, bookingDetails);
     console.log(bookingDetails)
     const btn=document.getElementById('openmodalpatientbooking')
     btn.click()
@@ -117,7 +117,7 @@ const Patientpages = () => {
 
     console.log(formData); // Logging form data to console for demonstration
     if (formData.location != 'hulu') {
-      axios.post(`http://localhost:3000/patient/find-doctor`, formData).then((result) => {
+      axios.post(`https://hospital-web-68vl.onrender.com/patient/find-doctor`, formData).then((result) => {
         console.log(result.data)
         setFilteredDoctors(result.data)
       }).catch((error) => {
