@@ -7,7 +7,7 @@ module.exports = (conn) => {
     Router.post('/', async (req, res) => {
         try {
 
-            if (req.body.type === 'doctor') {
+            if (req.body.type === 'Doctor') {
                 let values = req.body
                 values.password = await hashPassword(values.password)
                 values = { ...values, "review": 0, "count": 0 };
@@ -15,7 +15,7 @@ module.exports = (conn) => {
                 console.log(values);
                 console.log("Hi");
 
-                let sql = `INSERT INTO doctor VALUES (?)`;
+                let sql = `INSERT INTO Doctor VALUES (?)`;
                 conn.query(sql, [Object.values(values)], (error, result) => {
                     if (error) {
                         res.send({ status: false, message: "Error in register" })
@@ -32,7 +32,7 @@ module.exports = (conn) => {
                 values.password = await hashPassword(values.password)
                 delete values.type
 
-                let sql = `INSERT INTO patient VALUES (?)`;
+                let sql = `INSERT INTO Patient VALUES (?)`;
                 conn.query(sql, [Object.values(values)], (error, result) => {
                     if (error) res.send({ status: false, message: "Error in register" })
                     else {

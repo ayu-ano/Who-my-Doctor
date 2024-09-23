@@ -29,7 +29,7 @@ module.exports = (conn) => {
         let { email } = req.body
 
         //getting the number of slots
-        let sql = `SELECT timeslot_start,timeslot_end FROM doctor WHERE email='${email}';`
+        let sql = `SELECT timeslot_start,timeslot_end FROM Doctor WHERE email='${email}';`
         conn.query(sql, (error, result) => {
             if (error) res.status(400).send(error)
             else if (result.length == 0)
@@ -64,8 +64,8 @@ module.exports = (conn) => {
 
     Router.post('/get-patient', (req, res) => {
         const { patient_email } = req.body
-        // let sql=`SELECT p.email,p.name,p.sex,p.age from patient p,booking_details bd WHERE bd.patient_email=p.email AND bd.patient_email='${patient_email}' AND bd.doctor_email='${doctor_email}' AND bd.date_of_appointment='${date}' AND bd.slot_booked=${slot};`
-        let sql = `SELECT name,email,age,sex FROM patient WHERE email='${patient_email}'`
+        // let sql=`SELECT p.email,p.name,p.sex,p.age from Patient p,booking_details bd WHERE bd.patient_email=p.email AND bd.patient_email='${patient_email}' AND bd.doctor_email='${doctor_email}' AND bd.date_of_appointment='${date}' AND bd.slot_booked=${slot};`
+        let sql = `SELECT name,email,age,sex FROM Patient WHERE email='${patient_email}'`
         conn.query(sql, (error, result) => {
             if (error) res.status(400).send(error)
             if (result.length == 0) {
@@ -96,7 +96,7 @@ module.exports = (conn) => {
     Router.post('/update-profile', (req, res) => {
         const { username, email, qualification, specialisation, fees, location } = req.body;
 
-        let sql = `UPDATE doctor 
+        let sql = `UPDATE Doctor 
                SET username = ?, qualification = ?, specialisation = ?, fees = ?, location = ?
                WHERE email = ?;`;
         const values = [username, qualification, specialisation, fees, location, email];

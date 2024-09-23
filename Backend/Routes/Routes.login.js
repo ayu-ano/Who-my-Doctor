@@ -53,7 +53,7 @@ module.exports = (conn) => {
             const { email, password, type } = req.body
             let sql = `SELECT * FROM ${type} WHERE email = '${email}';`
             conn.query(sql, async (error, result) => {
-                if (error) res.status(400).send(error)
+                if (error) res.status(401).send(error)
                 else if (result.length == 0)
                     res.send({ status: false, message: "Invalid email" })
                 else {

@@ -125,8 +125,8 @@ export default function SignUp() {
                     onChange={handletype}
                     className="mx-2 p-1 rounded"
                   >
-                    <option value="doctor">Doctor</option>
-                    <option value="patient">Patient</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Patient">Patient</option>
                   </select>
                 </div>
                 <hr />
