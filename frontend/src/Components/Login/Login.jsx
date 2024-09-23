@@ -83,8 +83,8 @@ export default function Login() {
                             <div className="d-flex  input-div type-sel align-items-center justify-content-center fs-5">
                                 Select the type of User
                                 <select id="dropdown  " name="dropdown" v className='mx-2 p-1 rounded' value={type} onChange={handletype}>
-                                    <option value="doctor" >Doctor</option>
-                                    <option value="patient" >Patient</option>
+                                    <option value="Doctor" >Doctor</option>
+                                    <option value="Patient" >Patient</option>
 
                                 </select>
                             </div>
