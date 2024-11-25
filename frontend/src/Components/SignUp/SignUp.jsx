@@ -8,7 +8,7 @@ import { toast } from "react-hot-toast";
 import NavBar from "../Navbar/NavBar";
 
 export default function SignUp() {
-  const [type, setType] = useState("doctor");
+  const [type, setType] = useState("Doctor");
   const navigate = useNavigate();
 
   const [patient, setPatient] = useState({
@@ -47,7 +47,7 @@ export default function SignUp() {
     e.preventDefault();
     try {
       let data = {};
-      if (type === "patient") {
+      if (type === "Patient") {
         // if(patient.password.length<8){
         //     alert('Password must of at least 8 character')
         //     return
@@ -112,7 +112,7 @@ export default function SignUp() {
           <div className="col-6 p-0 ">
             <img src={img} alt="" className="signup-img" />
           </div>
-          {type === "doctor" && (
+          {type === "Doctor" && (
             <div className="col-6 form-inp overflow-auto">
               <h1 className="text-center mt-3">Register</h1>
               <form className="my-5 ps-2" onSubmit={handleSubmit}>
@@ -327,7 +327,7 @@ export default function SignUp() {
             </div>
           )}
 
-          {type === "patient" && (
+          {type === "Patient" && (
             <div className="col-6 form-inp overflow-auto ">
               <h1 className="text-center mt-3 ">Register</h1>
               <form className="my-5 ps-2" onSubmit={handleSubmit}>
@@ -340,8 +340,8 @@ export default function SignUp() {
                     onChange={handletype}
                     className="mx-2"
                   >
-                    <option value="doctor">Doctor</option>
-                    <option value="patient">Patient</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Patient">Patient</option>
                   </select>
                 </div>
                 <hr />
