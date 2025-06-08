@@ -30,7 +30,7 @@ function Home() {
 
 
           <p class="healthcare-message" style={{ textAlign: 'justify', paddingLeft: "20px", paddingTop: '15px' }}>
-            We Sarique, Abhik, Krishnendu, Ayush came together to create this
+            We  came together to create this
             healthcare management system,driven by our passion for improving
             healthcare management.Every year about 8% healthcare tragedies occur
             in our nation because of the inability of the population to reach the
